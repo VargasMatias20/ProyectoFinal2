@@ -1,0 +1,557 @@
+/* ===== RESET GENERAL ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ===== CUERPO ===== */
+body {
+    background: radial-gradient(circle at top, #020617, #000000);
+    color: #e5f3ff;
+    line-height: 1.9;
+}
+
+/* ===== BANNER ===== */
+.banner {
+    position: relative;
+    min-height: 75vh;
+    padding: 90px 20px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    background:
+        linear-gradient(120deg, rgba(14,165,233,0.15), rgba(99,102,241,0.15)),
+        url("https://images.unsplash.com/photo-1518770660439-4636190af475") center/cover no-repeat;
+
+    border-bottom: 3px solid #22d3ee;
+    box-shadow: inset 0 -80px 120px rgba(0,0,0,0.9);
+}
+
+/* Oscurecer imagen */
+.banner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+    z-index: 1;
+}
+
+/* ===== CONTENIDO BANNER ===== */
+.banner-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1000px;
+}
+
+.banner h1 {
+    font-size: clamp(3.2rem, 6vw, 4.5rem);
+    font-weight: 900;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #67e8f9;
+
+    text-shadow:
+        0 0 20px rgba(34,211,238,0.9),
+        0 0 45px rgba(99,102,241,0.8);
+}
+
+.banner p {
+    margin-top: 30px;
+    font-size: 1.35rem;
+    color: #bae6fd;
+    line-height: 2;
+}
+
+/* ===== LOGO COLEGIO ===== */
+.logo-colegio {
+    position: absolute;
+    top: 25px;
+    left: 30px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    z-index: 3;
+}
+
+.logo-colegio img {
+    width: 120px;   /* tamaño mayor */
+    height: auto; /* mantiene proporción */
+}
+
+
+.logo-colegio span {
+    font-size: 15px;
+    font-weight: 600;
+    color: #e0f2fe;
+}
+
+/* ===== MENÚ ===== */
+.menu {
+    background: linear-gradient(to right, #020617, #030712);
+    padding: 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    border-bottom: 2px solid rgba(34,211,238,0.6);
+}
+
+.menu a {
+    color: #67e8f9;
+    margin: 0 14px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+}
+
+.menu a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px #22d3ee;
+}
+
+/* ===== SECCIONES ===== */
+.section {
+    padding: 90px 12%;
+    display: none;
+}
+
+.section.dark {
+    background:
+        linear-gradient(135deg, rgba(15,23,42,0.9), rgba(2,6,23,0.95));
+}
+
+/* Sección visible inicial */
+#introduccion {
+    display: block;
+}
+
+/* ===== TÍTULOS ===== */
+.section h2 {
+    font-size: 2.4rem;
+    margin-bottom: 35px;
+    color: #67e8f9;
+    text-shadow: 0 0 12px rgba(34,211,238,0.7);
+}
+
+/* ===== TEXTO ===== */
+.section p {
+    font-size: 1.05rem;
+    margin-bottom: 22px;
+    text-align: justify;
+    color: #e0f2fe;
+}
+
+/* ===== LISTAS ===== */
+.list {
+    margin-top: 30px;
+}
+
+.list li {
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+    padding-left: 18px;
+    border-left: 3px solid #22d3ee;
+}
+
+/* ===== TARJETAS ===== */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 35px;
+    margin-top: 40px;
+}
+
+.card {
+    background: linear-gradient(135deg, #020617, #030712);
+    padding: 35px;
+    border-radius: 18px;
+    border: 1px solid rgba(34,211,238,0.4);
+
+    box-shadow:
+        0 0 20px rgba(34,211,238,0.15),
+        inset 0 0 20px rgba(99,102,241,0.15);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card h3 {
+    color: #7dd3fc;
+    margin-bottom: 18px;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow:
+        0 0 35px rgba(34,211,238,0.5),
+        inset 0 0 30px rgba(99,102,241,0.4);
+}
+
+/* ===== VIDEO ===== */
+.video-container {
+    margin-top: 40px;
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+}
+
+.video-container iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 18px;
+    border: 2px solid #22d3ee;
+}
+
+/* ===== QUIZ ===== */
+.game-box {
+    background: linear-gradient(135deg, #020617, #030712);
+    padding: 45px;
+    border-radius: 20px;
+    max-width: 600px;
+    margin-top: 35px;
+    border: 1px solid rgba(34,211,238,0.5);
+    box-shadow: 0 0 30px rgba(34,211,238,0.3);
+}
+
+.game-box p {
+    font-size: 1.1rem;
+    margin-bottom: 18px;
+}
+
+.game-box button {
+    margin: 10px;
+    padding: 12px 26px;
+    background: linear-gradient(135deg, #22d3ee, #6366f1);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #020617;
+}
+
+.game-box button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 15px #22d3ee;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: #000000;
+    text-align: center;
+    padding: 35px;
+    margin-top: 60px;
+    font-size: 14px;
+    color: #94a3b8;
+    border-top: 2px solid rgba(34,211,238,0.5);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .section {
+        padding: 70px 8%;
+    }
+
+    .banner h1 {
+        font-size: 2.6rem;
+    }
+
+    .banner p {
+        font-size: 1.1rem;
+    }
+
+    .logo-colegio span {
+        display: none;
+    }
+}
+
+#introduccion {
+    position: relative;
+}
+
+#introduccion::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 80%;
+    margin: 60px auto 0;
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(34,211,238,0.6),
+        transparent
+    );
+}
+
+#introduccion > p {
+    background: rgba(255,255,255,0.03);
+    padding: 22px 28px;
+    border-radius: 12px;
+
+    border-left: 4px solid rgba(34,211,238,0.6);
+
+    margin-bottom: 22px;
+
+    box-shadow:
+        0 8px 18px rgba(0,0,0,0.5),
+        inset 0 0 0 1px rgba(255,255,255,0.05);
+}
+
+#introduccion > p:hover {
+    border-left-color: #a78bfa;
+    transition: border-color 0.3s ease;
+}
+
+#introduccion h3 + p,
+#introduccion h3 + p + p {
+    background: linear-gradient(
+        135deg,
+        rgba(15,23,42,0.85),
+        rgba(30,41,59,0.85)
+    );
+
+    padding: 22px 26px;
+    margin-bottom: 12px;
+
+    border-radius: 14px;
+
+    border: 1px solid rgba(255,255,255,0.12);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.7),
+        inset 0 0 0 1px rgba(255,255,255,0.04);
+
+    color: #e5f2ff;
+    line-height: 1.75;
+}
+
+#introduccion h3 + p {
+    position: relative;
+}
+
+#introduccion h3 + p::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 18px;
+    right: 18px;
+    height: 2px;
+
+    background: linear-gradient(
+        to right,
+        transparent,
+        #22d3ee,
+        #a78bfa,
+        transparent
+    );
+}
+
+#introduccion h3:contains("Ejemplo") + p,
+#introduccion h3:contains("Ejemplo") + p + p {
+    border-left: 5px solid #22d3ee;
+    background: linear-gradient(
+        135deg,
+        rgba(2,132,199,0.18),
+        rgba(30,58,138,0.18)
+    );
+}
+
+#introduccion h3 + p:hover,
+#introduccion h3 + p + p:hover {
+    transform: translateY(-3px);
+    transition: all 0.3s ease;
+}
+
+/* =====================================================
+   IMPORTANCIA – ESTILO EXCLUSIVO (SOLO TEXTO)
+   ===================================================== */
+
+#importancia {
+    background: linear-gradient(to bottom, #0f172a, #020617);
+}
+
+/* Texto general */
+#importancia p {
+    font-size: 16.8px;
+    line-height: 2;
+    color: #e5e7eb;
+    margin-bottom: 26px;
+}
+
+/* Primer bloque (introducción del tema) */
+#importancia p:first-of-type {
+    font-size: 17.2px;
+    font-weight: 500;
+    padding: 28px 30px;
+    background: #020617;
+    border-left: 6px solid #38bdf8;
+    border-radius: 8px;
+}
+
+/* Bloques intermedios */
+#importancia p:nth-of-type(2),
+#importancia p:nth-of-type(3) {
+    padding: 26px 30px;
+    background: #020617;
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 1px #1e3a8a;
+}
+
+/* Texto de análisis */
+#importancia p:nth-of-type(4),
+#importancia p:nth-of-type(5) {
+    padding: 30px 34px;
+    background: #000000;
+    border-radius: 14px;
+    box-shadow: 0 0 0 1px #38bdf8;
+}
+
+/* Separación visual automática */
+#importancia p:not(:last-child)::after {
+    content: "";
+    display: block;
+    margin-top: 30px;
+}
+
+/* Título */
+#importancia h2 {
+    color: #38bdf8;
+    font-size: 34px;
+    margin-bottom: 45px;
+    border-bottom: 3px solid #1e3a8a;
+    padding-bottom: 14px;
+}
+
+/* Listas (si agregas luego) */
+#importancia ul {
+    margin: 30px 0 40px 35px;
+}
+
+#importancia li {
+    margin-bottom: 16px;
+    color: #c7d2fe;
+}
+
+/* Énfasis */
+#importancia strong {
+    color: #7dd3fc;
+    font-weight: 600;
+}
+/* =====================================================
+   BUENAS PRÁCTICAS – ESTILO EXCLUSIVO
+   ===================================================== */
+
+#buenas {
+    background: linear-gradient(to bottom, #020617, #020617);
+}
+
+/* Introducción */
+#buenas > p:first-of-type {
+    background: rgba(255,255,255,0.04);
+    padding: 28px 32px;
+    border-radius: 14px;
+    border-left: 6px solid #22d3ee;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05);
+    font-size: 1.08rem;
+}
+
+/* Subtítulos */
+#buenas h3 {
+    margin-top: 60px;
+    margin-bottom: 18px;
+    font-size: 1.5rem;
+    color: #7dd3fc;
+    text-shadow: 0 0 10px rgba(34,211,238,0.6);
+}
+
+/* Párrafos desarrollados */
+#buenas h3 + p {
+    background: linear-gradient(
+        135deg,
+        rgba(15,23,42,0.85),
+        rgba(30,41,59,0.85)
+    );
+    padding: 26px 30px;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow:
+        0 10px 28px rgba(0,0,0,0.6),
+        inset 0 0 0 1px rgba(255,255,255,0.04);
+}
+
+/* Listas de buenas prácticas */
+#buenas .impact-list {
+    margin-top: 25px;
+    padding-left: 0;
+}
+
+#buenas .impact-list li {
+    list-style: none;
+    margin-bottom: 18px;
+    padding: 18px 22px;
+    border-left: 4px solid #38bdf8;
+    background: rgba(2,6,23,0.8);
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 1px rgba(56,189,248,0.15);
+    transition: transform 0.3s ease;
+}
+
+#buenas .impact-list li:hover {
+    transform: translateX(6px);
+}
+/* =====================================================
+   GLOSARIO – ESTILO EXCLUSIVO
+   ===================================================== */
+
+#glosario {
+    background: linear-gradient(to bottom, #0f172a, #020617);
+}
+
+/* Término */
+#glosario p strong {
+    display: block;
+    font-size: 1.15rem;
+    color: #67e8f9;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+/* Definición extendida */
+#glosario p {
+    background: rgba(255,255,255,0.035);
+    padding: 24px 28px;
+    border-radius: 14px;
+    margin-bottom: 22px;
+    border-left: 5px solid rgba(34,211,238,0.6);
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.55),
+        inset 0 0 0 1px rgba(255,255,255,0.05);
+
+    transition: all 0.3s ease;
+}
+
+/* Hover elegante */
+#glosario p:hover {
+    border-left-color: #a78bfa;
+    transform: translateY(-3px);
+}
+
+/* Separación visual entre conceptos */
+#glosario p + p {
+    margin-top: 10px;
+}
+
+/* Título principal */
+#glosario h2 {
+    font-size: 2.3rem;
+    color: #38bdf8;
+    border-bottom: 3px solid rgba(56,189,248,0.6);
+    padding-bottom: 16px;
+    margin-bottom: 50px;
+}
