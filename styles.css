@@ -555,3 +555,58 @@ footer {
     padding-bottom: 16px;
     margin-bottom: 50px;
 }
+/* ===============================
+   AUTORES – ESTILO EXCLUSIVO
+   =============================== */
+
+.autores {
+    margin-bottom: 35px;
+}
+
+.autores h3 {
+    font-size: 2rem;
+    color: #67e8f9;
+    text-shadow: 0 0 10px rgba(34,211,238,0.7);
+    margin-bottom: 25px;
+    border-bottom: 2px solid rgba(34,211,238,0.5);
+    padding-bottom: 10px;
+}
+
+/* Bloques de texto de autores */
+.autores ~ p {
+    background: linear-gradient(
+        135deg,
+        rgba(2,6,23,0.9),
+        rgba(15,23,42,0.95)
+    );
+
+    padding: 22px 28px;
+    margin-bottom: 18px;
+
+    border-radius: 14px;
+    border-left: 4px solid #22d3ee;
+
+    box-shadow:
+        0 8px 22px rgba(0,0,0,0.6),
+        inset 0 0 0 1px rgba(255,255,255,0.05);
+
+    color: #e0f2fe;
+    line-height: 1.85;
+    font-size: 1.05rem;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover elegante */
+.autores ~ p:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 0 28px rgba(34,211,238,0.45),
+        inset 0 0 0 1px rgba(255,255,255,0.08);
+}
+
+/* Resaltar nombres */
+.autores ~ p strong {
+    color: #7dd3fc;
+    font-weight: 600;
+}
